@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 html{
   font-family: 'Roboto', sans-serif;
 }
@@ -22,6 +23,7 @@ body {
   height: 7vh;
   min-height: 60px;
   margin-top: 50px;
+  z-index: 1;
 }
 
 .navContainer{
@@ -88,5 +90,74 @@ body {
 }
 
 .navBtn li a:hover {
-  color:white;
+  color:#555;
+}
+
+
+/* Slider*/
+
+.slider{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+  color: black;
+}
+
+.slider .slide {
+  width: 50%;
+  height: 90%;
+  border: 10px solid white;
+  box-shadow: 8px 8px 25px 2px #aaa;
+}
+
+/* Slider control */
+
+.control {
+  font-size: 40px;
+  color: #999;
+  transition: 0.5s;
+}
+
+.control .arrowRight {
+  position: absolute;
+  right: 20%;
+}
+
+.control .arrowRight:hover {
+  color: #ccc; /* Put colors into variable */
+}
+
+.control .arrowLeft {
+  position: absolute;
+  left: 20%;    
+}
+
+.control .arrowLeft:hover {
+  color: #ccc; /* Put colors into variable */
+}
+
+/* Slider indicators */
+
+.slider .indicators{
+  display: flex;
+  position: absolute;
+  justify-content: space-evenly;
+  bottom: 0;
+  left:50%;
+  transform: translateX(-50%);
+  height: 10px;
+  width: 40%;
+} 
+
+.indicators span {
+  width: 40px;
+  border: 1px solid #ccc;
+}
+
+.indicators span.active {
+  width: 40px;
+  background-color: rgba(80, 212, 221, 0.623);
 }
