@@ -20,11 +20,12 @@ let pictureList = [
 
 // Navbar scroll
 navStretch = () => {
-  if (window.scrollY === navbar.offsetTop) {
+  if (window.scrollY >= navbar.offsetTop) {
     navContainer.classList.add('active');
   } else {
     navContainer.classList.remove('active');
   };
+  console.log(window.scrollY, navbar.offsetTop)
 };
 
 // Slider
