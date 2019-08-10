@@ -51,7 +51,7 @@ body {
 .navContainer.active img {
   height: 6vh;
   margin-left: 100px;
-  border-radius: 5px;
+  border: none;
 }
 
 .navBtn {
@@ -165,12 +165,17 @@ body {
 
 /* Main content */
 
-main.content {
+main.content{
+  display: flex;
+  justify-content: center;
+}
+
+.content .contentWrapper {
   display: grid;
   justify-items: center;
+  width: 80%;
   margin-top: 50px;
-  grid-template-columns: repeat(2,1fr);
-  /* grid-auto-rows: minmax(300px, auto); */
+  grid-template-columns: 2fr 1fr;
   grid-template-areas:
   "title title"
   "description agent"
@@ -183,7 +188,7 @@ main.content {
   grid-area: title;
   height: 10vh;
   display:flex;
-  width: 70%;
+  width: 100%;
   margin-bottom: 25px;
   justify-content: space-around;
   align-items: center;
@@ -193,7 +198,7 @@ main.content {
 .title .property{
   width: 50%;
   padding: 20px 40px;
-  font-size: 15px;
+  font-size: 23px;
   color: #000
 }
 
@@ -209,19 +214,24 @@ main.content {
 
 .content .description{
   grid-area: description;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .description .txt {
-  width: 70%;
   text-align: justify;
   line-height: 1.6;
 }
 
+.description .txt h1 {
+  margin-bottom: 20px;
+}
+
 .description .txt h5 {
   font-size: 18px;
-  margin: 25px 0;
+  margin: 50px 0 25px;
 }
 
 .description .txt ul {
@@ -232,7 +242,86 @@ main.content {
 
 .content .agent{
   grid-area: agent;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
 }
+
+.agent .agentDetails{
+  text-align: center;
+  position: relative;
+}
+
+.agent .agentDetails img{
+  width: 200px;
+  margin: 15px;
+  border-radius: 50%;
+  border: 3px solid cadetblue;
+}
+
+.agentDetails .agentContact {
+  margin: 10px 0 5px 40px;
+  text-align: left;
+}
+
+.agentContact i {
+  margin-right:10px;
+  line-height: 1.7;
+}
+
+/* Enquiry Form */
+
+.agent .enquiry{
+
+  width: 70%;
+}
+
+.enquiry form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.enquiry input {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid cadetblue;
+}
+
+.enquiry textarea {
+  border: 2px solid cadetblue;
+  border-radius: 10px;
+}
+
+.enquiry textarea::placeholder {
+  padding: 5px;
+  font-size: 17px;
+}
+
+.enquiry button {
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 20px;
+  color: white;
+  background-color: cadetblue;
+  border: 2px solid cadetblue;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.enquiry button:hover {
+  color:cadetblue;
+  background-color: white;
+  border: 2px solid cadetblue;
+}
+
+
+
+/* Map section */
 
 .content .map{
   grid-area: map;
