@@ -308,6 +308,7 @@ main.content{
   background-color: cadetblue;
   border: 2px solid cadetblue;
   border-radius: 10px;
+  cursor: pointer;
   transition: 0.5s;
 }
 
@@ -359,6 +360,16 @@ main.content{
 
 .content .map{
   grid-area: map;
+  width: 100%;
+}
+
+.propertyLocation{
+  height: 60vh;
+}
+
+.map .propertyLocation iframe{
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -382,9 +393,11 @@ section.media{
 
 .media .social {
   font-size: 30px;
+  text-align: center;
 }
+
 .media .social a {
-  margin-right: 25px;
+  margin-right: 15px;
   color:#555;
 }
 
