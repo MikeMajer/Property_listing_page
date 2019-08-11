@@ -245,6 +245,26 @@ main.content{
   list-style: none;  
 }
 
+/* Share */
+
+.txt .share {
+  width: 70%;
+  margin-top: 50px;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-top: 1px solid #000;
+}
+
+.txt .share a{
+  font-size: 20px;
+  color: #555;
+  margin-right: 10px;
+}
+
+.txt .share a:hover{
+  color: #ccc;
+}
+
 /* Agen section */
 
 .content .agent{
