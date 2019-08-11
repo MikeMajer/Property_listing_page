@@ -102,6 +102,7 @@ html{
   width: 100%;
   height: 70vh;
   color: black;
+  
 }
 
 .slider .slide {
@@ -176,8 +177,7 @@ main.content{
   grid-template-areas:
   "title title"
   "description agent"
-  "book book"
-  "map map";
+  "book book";
 }
 
 /* Property title */
@@ -326,48 +326,65 @@ main.content{
   justify-content: center;
   align-items: center;
   width:100%;
-  margin: 100px 0;
-  /* background-color: #000; */
+  padding: 120px 0;
 }
 
 .book .booknow {
+  box-shadow: 15px 15px 20px 0px #bbb;
   position: relative;
   overflow: hidden;
   font-size: 40px;
-  background-color: red;
   height: 200px;
   width: 150px;
   text-align: center;
   margin-top: 10px;
+  background-color: cadetblue;
+  border-radius: 10px;
+  /* border: 2px solid #000; */
+}
+
+.booknow i {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  font-size: 70px;
+  color: white;
+  z-index: 1;
 }
 
 .booknow .overlay {
   position: absolute;
-  top:-50%;
+  bottom:-100%;
   left:50%;
-  transform: translate(-50%,-50%);
-  background-color: yellow;
+  transform: translateX(-50%);
+  background-color: #ccc;
   width: 100%;
   height: 100%;
   transition: 0.5s;
+  z-index: 2;
 }
 
 .booknow:hover .overlay {
-  top: 50%;
+  bottom: 0;
+}
+
+.overlay .overlayTxt {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
 }
 
 /* Map section */
 
-.content .map{
-  grid-area: map;
-  width: 100%;
-}
-
-.propertyLocation{
+section.map{
   height: 60vh;
 }
 
-.map .propertyLocation iframe{
+.map iframe{
   width: 100%;
   height: 100%;
 }
@@ -387,8 +404,12 @@ section.media{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 60%;
-  line-height: 1.7;
+  width: 90%;
+  line-height: 1.5;
+}
+
+.mediaWrapper .adress p {
+  font-size: 23px;
 }
 
 .media .social {
@@ -414,5 +435,5 @@ footer {
   text-align: center;
   line-height: 5vh;
   background-color: #000;
-  box-shadow: 0px -5px 15px 10px white;
+  box-shadow: 0px -7px 15px 10px white;
 }
