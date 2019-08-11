@@ -3,6 +3,7 @@ const navContainer = document.querySelector('.navContainer');
 const slide = document.querySelector('.slide');
 const arrowRight = document.querySelector('.arrowRight');
 const arrowLeft = document.querySelector('.arrowLeft');
+const burger = document.querySelector('.burger');
 const indicators = [...document.querySelectorAll('.indicators span')];
 
 const time = 10000;
@@ -17,6 +18,13 @@ let pictureList = [
   "img/pic_4.jpg",
   "img/pic_5.jpg"
 ];
+
+
+// Burger Menu
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+  navbar.classList.toggle('active');
+});
 
 // Navbar scroll
 navStretch = () => {
