@@ -12,9 +12,15 @@
 --txtColor:#888;
 }
 
-html{
+body{
+  display: flex;
+  justify-content: center;
   font-family: 'Roboto', sans-serif;
   color:var(--txtColor);
+}
+
+.wrapper {
+  max-width: 2500px;
 }
 
 /* Navigation */
@@ -319,6 +325,8 @@ main.content{
 .enquiry input {
   margin: 10px 0;
   padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
   border-radius: 10px;
   border: 2px solid var(--themeColor1);
 }
@@ -328,6 +336,7 @@ main.content{
   padding: 7px;
   font-size: 17px;
   border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
   border: 2px solid var(--themeColor1);
 }
 
@@ -543,7 +552,7 @@ footer p {
 
 /******************************************* Media Queries**************************************************/
 
-@media (max-height:1400px) {
+@media (max-width:1400px) {
   .slider .slide {
     width: 51%;
   }
