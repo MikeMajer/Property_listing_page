@@ -10,7 +10,7 @@ const time = 10000;
 const right = "fas fa-chevron-right";
 const left = "fas fa-chevron-left";
 let counter = 0;
-let pictureList = [
+let picturesList = [
   "img/pic_0.jpg",
   "img/pic_1.jpg",
   "img/pic_2.jpg",
@@ -21,10 +21,10 @@ let pictureList = [
 
 
 // Burger Menu
-burger.addEventListener('click', () => {
+classToggle = () => {
   burger.classList.toggle('active');
   navbar.classList.toggle('active');
-});
+};
 
 // Navbar scroll
 navStretch = () => {
@@ -33,11 +33,9 @@ navStretch = () => {
   } else {
     navContainer.classList.remove('active');
   };
-  console.log(window.scrollY, navbar.offsetTop)
 };
 
 // Slider
-
 changeIndicator = () => {
   const activeIndicator = indicators.findIndex(indicator => indicator.classList.contains('active'));
   indicators[activeIndicator].classList.remove('active');
@@ -46,27 +44,26 @@ changeIndicator = () => {
 
 autoSlide = () => {
   counter++;
-  if (counter === (pictureList.length)) {
+  if (counter === (picturesList.length)) {
     counter = 0;
   }
-  slide.src = pictureList[counter];
+  slide.src = picturesList[counter];
   changeIndicator();
 };
 
 changeSlide = (e) => {
-
   if (e.target.className === right || e.keyCode === 39) {
     counter++;
-    if (counter === (pictureList.length)) {
+    if (counter === (picturesList.length)) {
       counter = 0;
     }
   } else if (e.target.className === left || e.keyCode === 37) {
     counter--;
     if (counter < 0) {
-      counter = pictureList.length - 1;
+      counter = picturesList.length - 1;
     }
   }
-  slide.src = pictureList[counter];
+  slide.src = picturesList[counter];
   clearInterval(indexInterval);
   indexInterval = setInterval(autoSlide, time);
   changeIndicator();
@@ -74,6 +71,8 @@ changeSlide = (e) => {
 
 let indexInterval = setInterval(autoSlide, time);
 
+
+burger.addEventListener("click", classToggle);
 arrowRight.addEventListener("click", changeSlide);
 arrowLeft.addEventListener("click", changeSlide);
 window.addEventListener("keydown", changeSlide);
