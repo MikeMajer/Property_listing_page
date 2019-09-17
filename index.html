@@ -142,10 +142,10 @@
           <div class="enquiry">
             <form action="">
               <h1>Enquiry Form</h1>
-              <input type="text" name="FirstName" placeholder="First Name*">
-              <input type="text" name="LastName" placeholder="First Name*">
-              <input type="text" name="Phone" placeholder="Phone*">
-              <input type="text" name="Email" placeholder="Email*">
+              <input type="text" name="FirstName" placeholder="*First Name" required>
+              <input type="text" name="LastName" placeholder="*Last Name" required>
+              <input type="text" name="Phone" placeholder="*Phone" minlength="9" required>
+              <input type="email" name="Email" placeholder="*Email" required>
               <textarea name="message" rows="8" placeholder="Add Enquiry"></textarea>
               <div class="keep">
                 <h3>Keep Informed</h3>
